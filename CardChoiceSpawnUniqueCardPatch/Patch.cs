@@ -8,7 +8,7 @@ using UnityEngine;
 namespace CardChoiceSpawnUniqueCardPatch {
     [Serializable]
     [HarmonyPatch(typeof(CardChoice), "SpawnUniqueCard")]
-    class CardChoicePatchSpawnUniqueCard {
+    public class CardChoicePatchSpawnUniqueCard {
         //To be overwriten by modding utils if present.
         public static Func<Player, CardInfo> DrawRandom = (player) => {
             CardInfo result = null;
