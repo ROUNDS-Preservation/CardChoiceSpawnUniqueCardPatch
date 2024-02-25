@@ -15,7 +15,7 @@ namespace CardChoiceSpawnUniqueCardPatch {
             CustomCard.BuildCard<NullCard>(cardInfo => NullCard = cardInfo);
         }
 
-        private const string ModId = "pykess.rounds.plugins.cardchoicespawnuniquecardpatch";
+        private const string ModId = "rounds.paches.cardchoicespawnuniquecardpatch";
 
         private const string ModName = "CardChoiceSpawnUniqueCardPatch";
 
