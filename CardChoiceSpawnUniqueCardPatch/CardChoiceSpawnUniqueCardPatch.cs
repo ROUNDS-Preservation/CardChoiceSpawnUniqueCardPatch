@@ -1,6 +1,6 @@
 ﻿using BepInEx;
 using HarmonyLib;
-using UnboundLib.Cards;
+using Unbound.Cards;
 
 namespace CardChoiceSpawnUniqueCardPatch {
     [BepInDependency("com.willis.rounds.unbound")]

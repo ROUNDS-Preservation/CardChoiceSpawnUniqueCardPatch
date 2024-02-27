@@ -34,7 +34,10 @@
       <HintPath>$(RoundsFolder)\Rounds_Data\Managed\PhotonUnityNetworking.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="UnboundLib">
-      <HintPath>$(RoundsFolder)\BepInEx\plugins\UnboundLib.dll</HintPath>
+      <HintPath>$(RoundsFolder)\BepInEx\plugins\UnboundLib\UnboundLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Unbound.Cards">
+      <HintPath>$(RoundsFolder)\BepInEx\plugins\UnboundLib\UnboundCards.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>$(RoundsFolder)\Rounds_Data\Managed\UnityEngine.dll</HintPath>

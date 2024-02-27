@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
-using UnboundLib.Utils;
+using Unbound.Cards.Utils;
 
 namespace CardChoiceSpawnUniqueCardPatch.CustomCategories {
     public class CustomCardCategories {
