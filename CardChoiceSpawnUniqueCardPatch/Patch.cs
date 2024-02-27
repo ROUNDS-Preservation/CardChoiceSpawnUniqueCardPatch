@@ -83,7 +83,7 @@ namespace CardChoiceSpawnUniqueCardPatch {
 
             CardInfo randomCard = DrawRandom(CardChoice.instance.cards.Where(c => Validator(player, c)).ToArray());
 
-            if(randomCard != null) randomCard = CardChoiceSpawnUniqueCardPatch.NullCard;
+            if(randomCard == null) randomCard = CardChoiceSpawnUniqueCardPatch.NullCard;
 
             __result = (GameObject)__instance.InvokeMethod("Spawn", randomCard.gameObject, pos, rot);
             __result.GetComponent<CardInfo>().sourceCard = randomCard;
