@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Unbound.Core;
 using UnityEngine;
 
@@ -14,28 +13,13 @@ namespace CardChoiceSpawnUniqueCardPatch {
             CardInfo result = null;
             float num = 0f;
             for(int i = 0; i < cards.Length; i++) {
-                if(cards[i].rarity == CardInfo.Rarity.Common) {
-                    num += 10f;
-                }
-                if(cards[i].rarity == CardInfo.Rarity.Uncommon) {
-                    num += 4f;
-                }
-                if(cards[i].rarity == CardInfo.Rarity.Rare) {
-                    num += 1f;
-                }
+                num += GetWeight(cards[i]);
             }
 
             float num2 = UnityEngine.Random.Range(0f, num);
+
             for(int j = 0; j < cards.Length; j++) {
-                if(cards[j].rarity == CardInfo.Rarity.Common) {
-                    num2 -= 10f;
-                }
-                if(cards[j].rarity == CardInfo.Rarity.Uncommon) {
-                    num2 -= 4f;
-                }
-                if(cards[j].rarity == CardInfo.Rarity.Rare) {
-                    num2 -= 1f;
-                }
+                num2 -= GetWeight(cards[j]);
                 if(num2 <= 0f) {
                     result = cards[j];
                     break;
@@ -45,6 +29,14 @@ namespace CardChoiceSpawnUniqueCardPatch {
             return result;
         };
 
+        public static Func<CardInfo, float> GetWeight = (card) => {
+            return card.rarity switch {
+                CardInfo.Rarity.Common => 10f,
+                CardInfo.Rarity.Uncommon => 4f,
+                CardInfo.Rarity.Rare => 1f,
+                _ => 0f
+            };
+        };
 
         public static Func<CardInfo, bool> CanCardSpawn = (card) => {
 
